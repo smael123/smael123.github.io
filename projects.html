@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Ismael's Website</title>
+	</head>
+	<body>
+		<header role="banner">
+			<h1>Welcome to Ismael Almaguer's website!</h1>
+			<h2>My Projects</h2>
+			<nav role="navigation">
+				<ul>
+					<li><a href="index.html" title="Return to the main page">Home</a></li>
+					<li><a href="aboutme.html" title="About Me">About Me</a></li>
+					<li><a href="languages.html" title="Languages I am fluent in">Fluent Programming Languages</a></li>
+					<li a href="projects.html" title="My projects">Projects</li>
+				</ul>
+			</nav>
+		</header>
+		<main role="main">
+			<article role ="article">
+				<nav>
+					<ul>
+						<li><a href="projects.html#simCalc" title="Read about the calculator android app">Simple Calculator</a></li>
+					</ul>
+				</nav>
+				<section id="simCalc">
+					<h3>Simple Calculator</h3>
+					<aside>Screenshot:</aside>
+					<p>Realizing that people use applications on more than just desktops, I wanted to make a calculator for Android devices. I used Android Studio for this project and it is a real pain to get the default emulator working on a computer with an AMD processor. I came across a third party emulator named Memu and used that since it supported AMD-V.</p>
+					<p>I used the Shunting Yard algorithm with this video as a guide:</p>
+					<aside><iframe width="560" height="315" src="https://www.youtube.com/embed/QzVVjboyb0s" frameborder="0" allowfullscreen></iframe></aside>
+					<p><a href="https://github.com/smael123/SimpleCalculator" title="GitHub calculator link">Link to project on GitHub</a></p>
+				</section>
+				<section id="persPol">
+					<h3>Personality Patterns among US Politicians</h3>
+					<p>This was my Senior Project. I wanted to find personality patterns among US politicians (hence the title) using Twitter data. I was to gather the tweets, get personality percentile scores for each politician based on their concacted tweets.</p>
+					<h4>Gathering Tweets</h4>
+					<p>First I got an excel file with the names of all the people in the House of Representatives from <a href="http://clerk.house.gov/member_info/" title="Go to clerk.house.gov">their website</a></p>
+					<p>I used the <a href="https://github.com/bear/python-twitter" title="Link to python-twitter GitHub">python-twitter</a> API and the Python programming language. Using this API I first gathered the names of the people in the House of Representatives. It was from a twitter list by Twitter Government but a I write this the link I used is dead. I used the <a href="https://dev.twitter.com/rest/reference/get/lists/list" title="Go to Twitter Dev page for GET lists">GET lists/list</a> part of the API</p>
+					<p>Using openpyxl, I inserted the twitter handle (screen name) to the corresponding name based on wether or not the real name matched. It almost worked fully. Some had middle names in the government file that did not match the Twitter name. And some used suffixes like Jr. that were again not in the Twitter name. For those cases I manually entered the data.</p>
+					<p>When you gather tweets from twitter you can save the result as a JSON file. I saved the JSON files in a separate folder with each file being named after the politician. However this was approach was not very good. There are special chracters in some of the file names and I had trouble reading the files. Not only that but this approach is not portable since other operating systems have different file name requirements. I got it to work but in the future I think I would have either one big JSON file, or index each politican in both the excel file and the file name.</p>
+					<h4>Getting the Personality Scores</h4>
+					<p>To get the personality percentile scores I used <a href="https://www.ibm.com/watson/developercloud/personality-insights.html" title="Dev page for Watson Personality Insights">IBM Watson's Personality Insights API (PI)</a>. I sent the API the concacted tweet and it returns a personality scores for that concacted tweet. You could use any piece of text. It might be fun to get the personality scores for movie characters. The scores include big 5 values, facets, needs, and values. Having these scores I was finally able to analyze the tweets.</p>
+					<h4>Analyzing the Personality Scores</h4>
+					<p>From the start it was decided that we would cluster that data. For this I used R, a vector language used by data scientists. I used the k-means algorithm built in to the base package of R to cluster the data.</p>
+					<p>After this I analyzed the data by making box plots using Excel. <strong>This should've been done before clustering</strong> You should have a look at the data before clustering to see attributes that have large variacnces.</p>
+				</section>
+				<section id="persPol">
+					<h3>Diet Planner</h3>
+				</section>
+			</article>
+		</main>
+		
+	</body>
+</html>
