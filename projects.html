@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -24,15 +24,21 @@
 						<li><a href="projects.html#simCalc" title="Read about the calculator android app">Simple Calculator</a></li>
 					</ul>
 				</nav>
-				<section id="simCalc">
-					<h3>Simple Calculator</h3>
+                <section class="project" id="roblox">
+                    <h3>Roblox Clothing Maker</h3>
+                    <p>This application was designed to allow users to merge images onto a template for Roblox clothing (game skins). It is a desktop application done using WPF and C#.
+                    This application was interesting because I felt I made some smart design choices and followed the Agile software model well by making a Requirements document, conceptual model, a 
+                    sequence diagram, then a UML diagram before starting to implement the project. Also thanks to some information I learned in a OOP video on lynda, 
+                    I realized that each class should have one responsibility whereas before, I sparingly made new classes.</p>
+                </section>
+				<section class="project" id="simCalc">
+					<h3><a href="https://github.com/smael123/SimpleCalculator" title="Link to project on GitHub">Simple Calculator</a></h3>
 					<aside>Screenshot:</aside>
 					<p>Realizing that people use applications on more than just desktops, I wanted to make a calculator for Android devices. I used Android Studio for this project and it is a real pain to get the default emulator working on a computer with an AMD processor. I came across a third party emulator named Memu and used that since it supported AMD-V.</p>
 					<p>I used the Shunting Yard algorithm with this video as a guide:</p>
 					<aside><iframe width="560" height="315" src="https://www.youtube.com/embed/QzVVjboyb0s" frameborder="0" allowfullscreen></iframe></aside>
-					<p><a href="https://github.com/smael123/SimpleCalculator" title="GitHub calculator link">Link to project on GitHub</a></p>
 				</section>
-				<section id="persPol">
+				<section class="project" id="persPol">
 					<h3>Personality Patterns among US Politicians</h3>
 					<p>This was my Senior Project. I wanted to find personality patterns among US politicians (hence the title) using Twitter data. I was to gather the tweets, get personality percentile scores for each politician based on their concacted tweets.</p>
 					<h4>Gathering Tweets</h4>
@@ -46,9 +52,30 @@
 					<p>From the start it was decided that we would cluster that data. For this I used R, a vector language used by data scientists. I used the k-means algorithm built in to the base package of R to cluster the data.</p>
 					<p>After this I analyzed the data by making box plots using Excel. <strong>This should've been done before clustering</strong> You should have a look at the data before clustering to see attributes that have large variacnces.</p>
 				</section>
-				<section id="persPol">
+				<section class="project" id="dietPlan">
 					<h3>Diet Planner</h3>
+                    <p>This project I worked on with a friend for our Database class. We had to develop a database application. We agreed to make a diet planner application with a GUI frontend.</p>
+                    <p>We used MySQL with XAMPP for the database. For the frontend we used a GUI framework for Java, JavaFX. I mostly worked on the database and some parts of the GUI.</p>
+                    <p>There was an interesting problem we came to. We wanted to have a table for each main food category since certain foods have different values. For example only a meat could be labeled as seafood
+                    So we wanted the Food table to reference only one of five tables. This was our first database project and we did not realize that such a schema was not possible. We got around this by having a compound key of the food id and the food type.
+                    </p>
+                    <p>The GUI was done using code instead of a drag and drop interface. It was a little painful but we managed to get it done. The primary reference videos we were using did not cover GUI development FXML, which is similar to Microsoft's XAML, since they both attempt to seperate program logic from the interface.</p>
 				</section>
+                <section class="project" id="tictac">
+                    <h3>5x5 Tic-Tac-Toe</h3>
+                    <p>This project was done in a group of 4 and was meant to teach us about Software Engineering and the Waterfall model. I was the team leader and worked on the specification and requirement documents
+                    On launch day it was a failure and crashed when the AI attempted to place their token on a taken spot. I did learn much about software engineering including what documents must be produced to have a sucessful 
+                    and maintainable project. Software Engineering was one of the most challenging classes I have ever taken. The documents we were asked to produce were very formal and filling them out for the first time was overbearing. However I do understand the importance of having a model and a series of steps to follow rather than just heading straight for the IDE.</p>
+                </section>
+                <section class="project" id="garlic">
+                    <h3>Garlic</h3>
+                    <p>Garlic was a client server application done in a team of two for our Object Oriented Programming class. The goal of the project was to develop an application that emulated
+                    the services that the Scholarship and Accounting offices did. The program allowed the user to sign up for scholarships, financial aid, pay their tuition, testing, and parking.</p>
+                    <p>It was done using Java and the sockets class. I worked on the financial aid side of services and the connection and transfer of data between the client and server. An interesting problem
+                    I came across was how to share classes. There were intially two packages Client and Server. Each package had to transfer objects of classes that they both implemented.
+                    I am not sure why I thought I should make the exact same class files and put them in each package but it did not work since the server did not have access to the Client package's Scholarship object
+                    The solution was to have a package of shared classes. However doing this ruined the chances of having seperate binaries for the client and server. The solution to that which was not implemented was to have a shared class library (that's the point of DLLs).</p>
+                </section>
 			</article>
 		</main>
 		
