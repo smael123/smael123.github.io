@@ -1,0 +1,23 @@
+/*current colors
+    #114b5f midnight green
+    #028090 metallic seaweed
+    #e4fde1 nyanza (white)
+    #456990 queen blue
+    #f45b69 fiery rose
+*/
+
+#summary {
+    background-color: #114b5f;
+}
+
+#languages {
+    background-color: #028090;
+}
+
+#work {
+    background-color: #456990;
+}
+
+#projects {
+    background-color: #f45b69
+}

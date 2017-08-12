@@ -1,0 +1,73 @@
+/*current colors
+    #114b5f midnight green
+    #028090 metallic seaweed
+    #e4fde1 nyanza (white)
+    #456990 queen blue
+    #f45b69 fiery rose
+*/
+
+
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+}
+
+header h1 {
+    font-family: 'Frijole', cursive;
+}
+
+#summary h1 {
+    font-size: 2.2em
+}
+
+.language {
+    width: 10%;
+    float: left;
+    /*border: 1px solid black;*/
+    min-height: 150px;
+    min-width: 150px;
+}
+
+.content-wrap {
+    max-width: 100em; /*so that the content will automatically adjust to smaller screens*/
+    margin: 0 auto; /*0 for top and bottom and auto for left and right*/
+    padding: 20px; /*pushes content in*/
+    overflow: auto; /*so color spans the image*/
+}
+
+.col-narrow {
+    width: 35%;
+    float: left;
+    /*padding-right: 3%;*/
+    min-height: 175px;
+}
+
+.col-wide {
+    width: 62%;
+    float: left;
+    min-height: 175px;
+}
+
+dd {
+    display: none;
+}
+
+dt:hover + dd {
+    display: block;
+}
+
+header, footer {
+    /*margin: 0 auto;
+    width: 70rem;*/
+    text-align: center;
+    background-color: #e4fde1;
+}
+
+header li, footer a {
+    margin-left: 20px;
+    margin-right: 20px;
+    /*padding-left:20px;
+    padding-right:20px;*/
+    /*border: 1px solid black;*/
+    display: inline-block;
+}

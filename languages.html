@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8">
 	<title>Ismael's Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik|Frijole" rel="stylesheet"> 
 	</head>
 	<body>
-		<header role="banner">
+		<header role="banner" class="content-wrap">
 			<h1>Ismael's Website</h1>
 			<h2>Programming Languages</h2>
 			<nav role="navigation">
@@ -18,39 +20,119 @@
 			</nav>
 		</header>
 		<main role="main">
-			<article role ="article">
-				<section>
-					<p>The following lists the programming languages that I am currently fluent in:</p>
-					<h3>C++</h3>
-					<p>I learned C++ at UHD. I took an introductory course, a Data Structures course, and a course with a focus on algorithms. However the latter two courses could be applied to any programming language.</p>
-					<h3>Java</h3>
-					<p>I first encountered Java at a CodeDay where i collaborated with a fellow programmer named David to develop a 9x9 game of Tic Tac Toe. David programmed the GUI in Swing and we both worked on the logic.</p>
-					<p>My next encounter with Java was when I took an Object Oriented Programming class. The professor exclaimed that Java was the best language for teaching Object Oriented Programming. That class not only helped me learn Java but also how to utilize OOP features like polymorphism, encapsulation, and inheritance.</p>
-					<p>My third encounter with Java was actually two encounters within the same timeframe. For my Software Engineering  class I was in a team. We had to create a Tic Tac Toe game with 3 AI opponents. We had to follow the software engineering steps making the following documents:
-					<ul>
-						<li>Requirements</li>
-						<li>Software Specifications</li>
-						<li>Detailed Design</li>
-						<li>Software Project Management Plan</li>
-						<li>Test Plan</li>
-					</ul>
-					<p>We used JavaFX to create the GUI based game. I wanted to use it instead of Swing since it was newer. More information on this can be found in the Projects section.</p>
-					<p>My third and a half encounter with Java was when I worked with another student at UHD to create a Database application that would help the user plan a diet. Again we used JavaFX. We were able to connect the JavaFX application with a MySQL server using JBDC.</p>
-					<p>In my latest encounter with Java, I created a calculator app for Android using the appropriately named Android Studio.</p>
-					<h3>R</h3>
-					<p>For my Senior Project I used R to analyze personality percentile scores. I used the kmeans clustering package for R to cluster said data.</p>
-					<h3>Python</h3>
-					<p>I first learned Python through a codeacademy.com course. I then used it in a hackathon to gather tweets from US politicians and again for my Senior Project.</p>
-					<h3>JavaScript</h3>
-					<p>I learned JavaScript in my Computer Graphics class. Although graphic programming is usually done with C++ we used WebGL which lets you program graphics in JavaScript. However the shaders were done in C++.</p>
-					<h3>C#</h3>
-					<p>One of my projects that I eventually will go back to was a poker game with an AI opponent. I first tried to program this in Visual Basic and then C#. In both attempts I tried to make a Windows Forms game.</p>
-					<p>Later on I went back to C# and made a Windows Forms application that allowed the user to look up the safety ratings of a car.</p>
-					<p>Now that cross platform development for C# is more supported by Microsoft, I am learning more about it as I predict that it will become a competitor to Java.</p>
-					<h4>Visual Basic</h3>
-					I took a Visual Basic class in college. It was the .NET version and we programmed Windows Forms applications with it. It was fun to create programs that look like the ones I grew up on.</p>
-				</section>
+			<article role ="article" class="content-wrap" style="background-color: #028090;">
+                <section id="c-plus-plus">
+                    <h3>C++</h3>
+                    <img width="64" alt="The C++ logo" src="images/cplusplus-logo.png"/>
+                    <p>
+                        I learned C++ at UHD. I took an introductory course, a Data Structures course,
+                        and a course with a focus on algorithms. However the latter two courses could be
+                        applied to any programming language.
+                    </p>
+                </section>
+                <section id="java">
+                    <h3>Java</h3>
+                    <img src="images/java-logo.png" width="64"/>
+                    <p>
+                        I first encountered Java at a CodeDay where i collaborated with a fellow programmer
+                        named David to develop a 9x9 game of Tic Tac Toe. David programmed the GUI in
+                        Swing and we both worked on the logic.
+                    </p>
+                    <p>
+                        My next encounter with Java was when I took an Object Oriented Programming class.
+                        The professor exclaimed that Java was the best language for teaching Object Oriented Programming.
+                        That class not only helped me learn Java but also how to utilize OOP features like polymorphism,
+                        encapsulation, and inheritance.
+                    </p>
+                    <p>
+                        My third encounter with Java was actually two encounters within the same timeframe. For
+                        my Software Engineering  class I was in a team. We had to create a Tic Tac Toe game with
+                        3 AI opponents. We had to follow the software engineering steps making the following documents:
+                        <ul>
+                            <li>Requirements</li>
+                            <li>Software Specifications</li>
+                            <li>Detailed Design</li>
+                            <li>Software Project Management Plan</li>
+                            <li>Test Plan</li>
+                        </ul>
+                    <p>
+                        We used JavaFX to create the GUI based game. I wanted to use it instead of Swing since it was a
+                        newer platform. More information on this can be found in the Projects section.
+                    </p>
+                    <p>
+                        My third and a half encounter with Java was when I worked with another student at UHD to
+                        create a Database application that would help the user plan a diet. Again we used JavaFX.
+                        We were able to connect the JavaFX application with a MySQL server using JBDC.
+                    </p>
+                    <p>
+                        In my latest encounter with Java, I created a calculator app for Android using the
+                        appropriately named Android Studio.
+                    </p>
+                </section>
+                <section id="r">
+                    <h3>R</h3>
+                    <img width="64" alt="R logo 2000" src="images/r-logo.png" />
+                    <p>
+                        For my Senior Project I used R to analyze personality percentile scores. I used the kmeans
+                        clustering package for R to cluster said data.
+                    </p>
+                </section>
+                <section id="python">
+                    <h3>Python</h3>
+                    <img class="language-logo" src="images/python-logo.png" width="128"/>
+                    <p>
+                        I first learned Python through a codeacademy.com course. I then used it in a hackathon to gather
+                        tweets from US politicians and again for my Senior Project.
+                    </p>
+                </section>
+                <section id="javascript">
+                    <h3>JavaScript</h3>
+                    <img width="64" alt="Unofficial JavaScript logo 2" src="images/javascript-logo.png" />
+                    <p>
+                        I learned JavaScript in my Computer Graphics class. Although graphic programming is usually done
+                        with C++ we used WebGL which lets you program graphics in JavaScript. However the shaders were
+                        done in C++.
+                    </p>
+                </section>
+                <section id="c-sharp">
+                    <h3>C#</h3>
+                    <img width="64" alt="C Sharp wordmark" src="images/csharp-logo.png" />
+                    <p>
+                        One of my projects that I eventually will go back to was a poker game with an AI opponent.
+                        I first tried to program this in Visual Basic and then C#. In both attempts I tried to make a
+                        Windows Forms game.
+                    </p>
+                    <p>
+                        Later on I went back to C# and made a Windows Forms application that allowed the user to
+                        look up the safety ratings of a car.
+                    </p>
+                    <p>
+                        Now that cross platform development for C# is more supported by Microsoft, I am learning more
+                        about it as I predict that it will become a competitor to Java.
+                    </p>
+                </section>
+                <section id="vb">
+                    <h3>Visual Basic</h3>
+                    <img alt="vbnet logo" src="images/visual-basic-logo.png"/>
+                    <p>
+                        I took a Visual Basic class in college. We learned the .NET version and we programmed 
+                        Windows Forms applications with it. It was fun to create programs that look like the ones 
+                        I grew up on.
+                    </p>
+                </section>
 			</article>
 		</main>
+        <footer>
+            <div class="content-wrap">
+                <h2>Let's Keep in Touch!</h2>
+
+                <!-- Social media and contact links. Add or remove any networks. -->
+                <div class="contact-info">
+                    <a href="mailto:ismael.alma@gmail.com">ismael.alma@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/ismael-almaguer-769164124">LinkedIn</a>
+                    <a href="https://github.com/smael123">Github</a>
+                </div>
+            </div>
+        </footer>
 	</body>
 </html>

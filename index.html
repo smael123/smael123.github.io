@@ -1,25 +1,128 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="utf-8">
-	<title>Ismael's Website</title>
-	</head>
-	<body>
-		<header role="banner">
-			<h1>Welcome to Ismael Almaguer's website!</h1>
-			<nav role="navigation">
-				<ul>
-					<li><a href="index.html" title="Return to the main page">Home</a></li>
-					<li><a href="aboutme.html" title="About Me">About Me</a></li>
-					<li><a href="languages.html" title="Languages I am fluent in">Fluent Programming Languages</a></li>
-					<li a href="projects.html" title="My projects">Projects</li>
-				</ul>
-			</nav>
-		</header>
-		<main role="main">
-			<article role ="article">
-			</article>
-		</main>
-		
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>Ismael's Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Frijole|Rubik" rel="stylesheet">
+</head>
+<body>
+    <header role="banner" class="content-wrap">
+        <h1>Welcome to Ismael Almaguer's website!</h1>
+        <nav role="navigation" class="nav-hover">
+            <ul>
+                <li><a href="index.html" title="Return to the main page">Home</a></li>
+                <li><a href="aboutme.html" title="About Me">About Me</a></li>
+                <li><a href="languages.html" title="Languages I am fluent in">Fluent Programming Languages</a></li>
+                <li><a href="projects.html" title="My projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main role="main">
+        <section class="content-wrap" id="summary">
+            <h1>Ismael Almaguer</h1>
+            <h2>Software Developer</h2>
+            <p>
+                I am a recent graduate of the University of Houston Downtown. I hold a Bachelor's of Science in
+                Computer Science and am interested in many areas of the field including desktop, mobile, and web development.
+            </p>
+        </section>
+        <section id="languages">
+            <div class="content-wrap">
+                <h2>Known Programming Languages</h2>
+                <div id="c-plus-plus" class="language">
+                    <h3>C++</h3>
+                    <a title="More information about C++ experience" href="languages.html#c-plus-plus" target="_blank"><img width="64" alt="The C++ logo.png" src="images/cplusplus-logo.png" /></a>
+                </div>
+                <div id="java" class="language">
+                    <h3>Java</h3>
+                    <a title="More information about Java experience" href="languages.html#java" target="_blank"><img src="images/java-logo.png" alt="Java logo.png" width="64" /></a>
+                </div>
+                <div id="r" class="language">
+                    <h3>R</h3>
+                    <a title="More information about R experience" href="languages.html#r" target="_blank"><img width="64" alt="R logo 2000" src="images/r-logo.png" /></a>
+                </div>
+                <div id="python" class="language">
+                    <h3>Python</h3>
+                    <a title="More information about Python experience" href="languages.html#python" target="_blank"><img class="language-logo" src="images/python-logo.png" width="128" /></a>
+                </div>
+                <div id="javascript" class="language">
+                    <h3>JavaScript</h3>
+                    <a title="More information about JavaScript experience" href="languages.html#javascript" target="_blank"><img width="64" alt="Unofficial JavaScript logo 2" src="images/javascript-logo.png" /></a>
+                </div>
+                <div id="c-sharp" class="language">
+                    <h3>C#</h3>
+                    <a title="More information about C# experience" href="languages.html#c-sharp" target="_blank"><img width="64" alt="C Sharp wordmark" src="images/csharp-logo.png" /></a>
+                </div>
+                <div id="vb" class="language">
+                    <h3>Visual Basic</h3>
+                    <a title="More information about Visual Basic experience" href="languages.html#vb" target="_blank"><img alt="VB.NET logo" src="images/visual-basic-logo.png" /></a>
+                </div>
+            </div>
+            <div class="content-wrap">
+                <h2>Other Technologies</h2>
+                <div id="mysql" class="language">
+                    <h3>MySQL</h3>
+                    <img alt="MySQL logo" src="images/mysql-logo.png" width="128" />
+                </div>
+            </div>
+        </section>
+        <section class="content-wrap" id="projects">
+            <h2>Projects</h2>
+            <dl>
+                <dt><a href="projects.html#roblox" title="Learn more about Roblox Clothing Maker" target="_blank">Roblox Clothing Maker</a></dt>
+                <dd>C# WPF app</dd>
+                <dt><a href="projects.html#sim-calc" title="Learn more about Simple Calculator" target="_blank">Simple Calculator</a></dt>
+                <dd>Android app</dd>
+                <dt><a href="projects.html#pers-pol" title="Learn more about my senior project" target="_blank">Personality Patterns among US Politicians</a></dt>
+                <dd>Senior Project</dd>
+                <dt><a href="projects.html#diet-plan" title="Learn more about Diet Planner">Diet Planner</a></dt>
+                <dd>JavaFX database application</dd>
+                <dt><a href="projects.html#tictac" title="Learn more about 5x5 Tic-Tac-Toe" target="_blank">5x5 Tic-Tac-Toe</a></dt>
+                <dd>JavaFX app</dd>
+                <dt><a href="projects.html#garlic" title="Learn more about Garlic" target="_blank">Garlic</a></dt>
+                <dd>Client-Server Java app</dd>
+            </dl>
+        </section>
+        <section class="content-wrap" id="work">
+            <h2>Work Experience</h2>
+            <!-- Job Details: copy this block to add more positions. -->
+            <div class="col-narrow">
+                <h3>Bookseller</h3>
+                <p>Barnes &amp; Noble</p>
+                <p>August 2016 - Present</p>
+            </div>
+            <div class="col-wide">
+                <p>Direct customers to required books and discuss purchase options.</p>
+                <p>
+                    Stock books and convenience items, conduct product inventory,
+                    and package books for transfer to other Barnes & Noble stores.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="content-wrap">
+            <h2>Let's Keep in Touch!</h2>
+
+            <!-- Social media and contact links. Add or remove any networks. -->
+            <div class="contact-info">
+                <a href="mailto:ismael.alma@gmail.com">ismael.alma@gmail.com</a>
+                <a href="https://www.linkedin.com/in/ismael-almaguer-769164124">LinkedIn</a>
+                <a href="https://github.com/smael123">Github</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
 </html>
+
+<!-- Image credits
+    C++ logo: By Ramlmn (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons
+    R logo: By R Foundation, from http://www.r-project.org [GPL (http://www.gnu.org/licenses/gpl.html)], via Wikimedia Commons
+    JavaScript logo: By Chris Williams [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AUnofficial_JavaScript_logo_2.svg
+    C# logo: By Original work: O&#039;Reilly Media, Inc. Vector version: Allmightyduck [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AC_Sharp_wordmark.svg"><img width="64" alt="C Sharp wordmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/C_Sharp_wordmark.svg/64px-C_Sharp_wordmark.svg.png
+    Python logo: https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png
+    -->
