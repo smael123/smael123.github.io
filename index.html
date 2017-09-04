@@ -2,33 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ismael's Website</title>
     <link rel="stylesheet" href="css/styles.css" />
     <!-- <link rel="stylesheet" href="css/main.css" /> -->
     <link href="https://fonts.googleapis.com/css?family=Frijole|Rubik" rel="stylesheet">
 </head>
 <body>
-    <header role="banner" class="content-wrap">
-        <h1>Welcome to Ismael Almaguer's website!</h1>
-        <nav role="navigation" class="nav-hover">
-            <ul>
-                <li><a href="index.html" title="Return to the main page">Home</a></li>
-                <li><a href="aboutme.html" title="About Me">About Me</a></li>
-                <li><a href="languages.html" title="Languages I am fluent in">Fluent Programming Languages</a></li>
-                <li><a href="projects.html" title="My projects">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header role="banner">
+		<h1>Welcome to Ismael Almaguer's Website</h1>
+		<nav role="navigation">
+			<ul>
+				<li><a href="index.html" title="Return to the main page">Home</a></li>
+				<li><a href="aboutme.html" title="About Me">About Me</a></li>
+				<li><a href="languages.html" title="Languages I am fluent in">Fluent Programming Languages</a></li>
+				<li><a href="projects.html" title="My projects">Projects</a></li>
+			</ul>
+		</nav>
+	</header>
     <main role="main">
-        <section class="content-wrap" id="summary">
-            <h1>Ismael Almaguer</h1>
-            <h2>Software Developer</h2>
-            <p>
-                I am a recent graduate of the University of Houston Downtown. I hold a Bachelor's of Science in
-                Computer Science and am interested in many areas of the field including desktop, mobile, and web development.
-            </p>
+        <section id="summary">
+			<div class="content-wrap">
+				<h1>Ismael Almaguer</h1>
+				<h2>Software Developer</h2>
+				<p>
+					I am a recent graduate of the University of Houston Downtown. I hold a Bachelor's of Science in
+					Computer Science and am interested in many areas of the field including desktop, mobile, and web development.
+				</p>
+			</div>
         </section>
-        <section id="languages">
+        <section id="language-section">
             <div class="content-wrap">
                 <h2>Known Programming Languages</h2>
                 <div id="c-plus-plus" class="language">
@@ -68,54 +71,53 @@
                 </div>
             </div>
         </section>
-        <section class="content-wrap" id="projects">
-            <h2>Projects</h2>
-            <dl>
-                <dt><a href="projects.html#roblox" title="Learn more about Roblox Clothing Maker" target="_blank">Roblox Clothing Maker</a></dt>
-                <dd>C# WPF app</dd>
-                <dt><a href="projects.html#sim-calc" title="Learn more about Simple Calculator" target="_blank">Simple Calculator</a></dt>
-                <dd>Android app</dd>
-                <dt><a href="projects.html#pers-pol" title="Learn more about my senior project" target="_blank">Personality Patterns among US Politicians</a></dt>
-                <dd>Senior Project</dd>
-                <dt><a href="projects.html#diet-plan" title="Learn more about Diet Planner">Diet Planner</a></dt>
-                <dd>JavaFX database application</dd>
-                <dt><a href="projects.html#tictac" title="Learn more about 5x5 Tic-Tac-Toe" target="_blank">5x5 Tic-Tac-Toe</a></dt>
-                <dd>JavaFX app</dd>
-				<dt><a href="projects.html#safe-car" title="Learn about Safe Car Application" target="_blank">Safe Car Application</a></dt>
-				<dd>Python and C# app that use the NHTSA NCAP API</dd>
-                <dt><a href="projects.html#garlic" title="Learn more about Garlic" target="_blank">Garlic</a></dt>
-                <dd>Client-Server Java app</dd>
-            </dl>
+        <section id="projects">
+			<div class="content-wrap">
+				<h2>Projects</h2>
+				<dl>
+					<dt><a href="projects.html#roblox" title="Learn more about Roblox Clothing Maker" target="_blank">Roblox Clothing Maker</a></dt>
+					<dd>C# WPF app</dd>
+					<dt><a href="projects.html#sim-calc" title="Learn more about Simple Calculator" target="_blank">Simple Calculator</a></dt>
+					<dd>Android app</dd>
+					<dt><a href="projects.html#pers-pol" title="Learn more about my senior project" target="_blank">Personality Patterns among US Politicians</a></dt>
+					<dd>Senior Project</dd>
+					<dt><a href="projects.html#diet-plan" title="Learn more about Diet Planner">Diet Planner</a></dt>
+					<dd>JavaFX database application</dd>
+					<dt><a href="projects.html#tictac" title="Learn more about 5x5 Tic-Tac-Toe" target="_blank">5x5 Tic-Tac-Toe</a></dt>
+					<dd>JavaFX app</dd>
+					<dt><a href="projects.html#safe-car" title="Learn about Safe Car Application" target="_blank">Safe Car Application</a></dt>
+					<dd>Python and C# app that use the NHTSA NCAP API</dd>
+					<dt><a href="projects.html#garlic" title="Learn more about Garlic" target="_blank">Garlic</a></dt>
+					<dd>Client-Server Java app</dd>
+				</dl>
+			</div>
         </section>
-        <section class="content-wrap" id="work">
-            <h2>Work Experience</h2>
-            <!-- Job Details: copy this block to add more positions. -->
-            <div class="col-narrow">
-                <h3>Bookseller</h3>
-                <p>Barnes &amp; Noble</p>
-                <p>August 2016 - Present</p>
-            </div>
-            <div class="col-wide">
-                <p>Direct customers to required books and discuss purchase options.</p>
-                <p>
-                    Stock books and convenience items, conduct product inventory,
-                    and package books for transfer to other Barnes & Noble stores.
-                </p>
-            </div>
+        <section id="work">
+			<div class="content-wrap">
+				<h2>Work Experience</h2>
+				<!-- Job Details: copy this block to add more positions. -->
+				<div class="col-narrow">
+					<h3>Bookseller</h3>
+					<p>Barnes &amp; Noble</p>
+					<p>August 2016 - Present</p>
+				</div>
+				<div class="col-wide">
+					<p>Direct customers to required books and discuss purchase options.</p>
+					<p>
+						Stock books and convenience items, conduct product inventory,
+						and package books for transfer to other Barnes & Noble stores.
+					</p>
+				</div>
+			</div>
         </section>
+		<footer class='contact-info'>
+			<h2>Let's Keep in Touch!</h2>
+			<a href="mailto:ismael.alma@gmail.com" alt="My e-mail address">e-mail</a>
+			<a href="https://www.linkedin.com/in/ismael-almaguer-769164124" alt="My LinkedIn page" target="_blank">LinkedIn</a>
+			<a href="https://github.com/smael123" alt="My GitHub page" target="_blank">GitHub</a>
+		</footer>
     </main>
-    <footer>
-        <div class="content-wrap">
-            <h2>Let's Keep in Touch!</h2>
-
-            <!-- Social media and contact links. Add or remove any networks. -->
-            <div class="contact-info">
-                <a href="mailto:ismael.alma@gmail.com" alt="My e-mail address">e-mail</a>
-				<a href="https://www.linkedin.com/in/ismael-almaguer-769164124" alt="My LinkedIn page" target="_blank">LinkedIn</a>
-				<a href="https://github.com/smael123" alt="My GitHub page" target="_blank">GitHub</a>
-            </div>
-        </div>
-    </footer>
+   
 
 </body>
 

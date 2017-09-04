@@ -6,15 +6,37 @@
     #f45b69 fiery rose
 */
 
+/* Global Styles */
 body {
     font-family: 'Rubik', sans-serif;
-    margin: 0;
+	margin: 0;
 }
 
 header h1 {
     font-family: 'Frijole', cursive;
 }
 
+header, footer {
+    text-align: center;
+    background-color: #e4fde1;
+}
+
+header li, footer a {
+    margin: 10px;
+    display: inline-block;
+}
+
+footer {
+	padding: 10px;
+	color: black;
+}
+
+header {
+	margin: 0 auto; /*0 for top and bottom and auto for left and right*/
+	overflow: auto;
+}
+
+/* Class Styles */
 .language {
     width: 10%;
     float: left;
@@ -23,9 +45,9 @@ header h1 {
 }
 
 .content-wrap {
-    max-width: 100em; /*so that the content will automatically adjust to smaller screens*/
+    max-width: 800px; /*so that the content will automatically adjust to smaller screens*/
     margin: 0 auto; /*0 for top and bottom and auto for left and right*/
-    padding: 40px; /*pushes content in*/
+    padding: 10px; /*pushes content in*/
     overflow: auto; /*so color spans the image*/
 }
 
@@ -41,30 +63,20 @@ header h1 {
     min-height: 175px;
 }
 
-dd {
-    display: none;
-}
-
-dt:hover + dd {
-    display: block;
-}
-
-header, footer {
-    text-align: center;
-    background-color: #e4fde1;
-}
-
-header li, footer a {
-    margin-left: 20px;
-    margin-right: 20px;
-    display: inline-block;
-}
-
-.project-link{
+.project-link {
 	display: block;
 	margin: 10px;
+}	
+
+.page-nav li {
+	list-style-type: none;
 }
 
+.page-nav {
+	padding: 10px;
+}
+
+/* id styles */
 #summary {
     background-color: #114b5f;
 	color: #f2f2f2;
@@ -74,14 +86,21 @@ header li, footer a {
     font-size: 2.2em
 }
 
-#languages {
+#language-section {
     background-color: #028090;
+}
+
+#language-section img {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 #work {
     background-color: #456990;
 }
 
-#projects {
+#projects-section {
     background-color: #f45b69
 }
+
