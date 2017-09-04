@@ -2,13 +2,14 @@
 <html>
 	<head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ismael's Website</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Rubik|Frijole" rel="stylesheet"> 
 	</head>
 	<body>
-		<header role="banner" class="content-wrap">
-			<h1>Ismael's Website</h1>
+		<header role="banner">
+			<h1>Welcome to Ismael Almaguer's Website</h1>
 			<nav role="navigation">
 				<ul>
 					<li><a href="index.html" title="Return to the main page">Home</a></li>
@@ -18,100 +19,93 @@
 				</ul>
 			</nav>
 		</header>
-		<main role="main">
-			<article role ="article" class="content-wrap" id="projects">
-				<nav>
-					<h2>My Projects</h2>
-					<ul>
-						<li><a href="#roblox" title="Read about Roblox Clothing Maker">Roblox Clothing Maker</a></li>
-						<li><a href="#simCalc" title="Read about the calculator android app">Simple Calculator</a></li>
-						<li><a href="#pers-pol" title="Read about my senior project">Personality Patterns among US Politicians</a></li>
-						<li><a href="#diet-plan" title="Read about Diet Planner">Diet Planner</a></li>
-						<li><a href="#tictac" title="Read about the Tic-Tac-Toe game">5x5 Tic-Tac-Toe</a></li>
-						<li><a href="#safe-car" title="Read about the safe car application">Safe Car Application</a></li>
-						<li><a href="#garlic" title="Read about Garlic client-server app">Garlic</a></li>
-					</ul>
-				</nav>
-                <section class="project" id="roblox">
-                    <h3>Roblox Clothing Maker</h3>
-                    <p>This application was designed to allow users to merge images onto a template for Roblox clothing (game skins). It is a desktop application done using WPF and C#.
-                    This application was interesting because I felt I made some smart design choices and followed the Agile software model well by making a Requirements document, conceptual model, a 
-                    sequence diagram, then a UML diagram before starting to implement the project. Also thanks to some information I learned in a OOP video on lynda, 
-                    I realized that each class should have one responsibility whereas before, I sparingly made new classes.</p>
-					<a href="https://github.com/smael123/RobloxClothingMaker" title="Link to project on GitHub" class="project-link" target="_blank">Roblox Clothing Maker on GitHub</a>
-                </section>
-				<section class="project" id="sim-calc">
-					<h3>Simple Calculator</h3>
-					<aside>Screenshot:</aside>
-					<p>Realizing that people use applications on more than just desktops, I wanted to make a calculator for Android devices. I used Android Studio for this project and it is a real pain to get the default emulator working on a computer with an AMD processor. I came across a third party emulator named Memu and used that since it supported AMD-V.</p>
-					<p>I used the Shunting Yard algorithm with this video as a guide:</p>
-					<aside><iframe width="560" height="315" src="https://www.youtube.com/embed/QzVVjboyb0s" frameborder="0" allowfullscreen></iframe></aside>
-					<a href="https://github.com/smael123/SimpleCalculator" title="Link to project on GitHub" class="project-link" target="_blank">Simple Calculator on GitHub</a>
-				</section>
-				<section class="project" id="pers-pol">
-					<h3>Personality Patterns among US Politicians</h3>
-					<p>This was my Senior Project. I wanted to find personality patterns among US politicians (hence the title) using Twitter data. I was to gather the tweets, get personality percentile scores for each politician based on their concatenated tweets.</p>
-					<h4>Gathering Tweets</h4>
-					<p>First I got an excel file with the names of all the people in the House of Representatives from <a href="http://clerk.house.gov/member_info/" title="Go to clerk.house.gov">their website</a></p>
-					<p>I used the <a href="https://github.com/bear/python-twitter" title="Link to python-twitter GitHub">python-twitter</a> API and the Python programming language. Using this API I first gathered the names of the people in the House of Representatives. It was from a twitter list by Twitter Government but a I write this the link I used is dead. I used the <a href="https://dev.twitter.com/rest/reference/get/lists/list" title="Go to Twitter Dev page for GET lists">GET lists/list</a> part of the API</p>
-					<p>Using openpyxl, I inserted the twitter handle (screen name) to the corresponding name based on whether or not the real name matched. It almost worked fully. Some had middle names in the government file that did not match the Twitter name. And some used suffixes like Jr. that were again not in the Twitter name. For those cases I manually entered the data.</p>
-					<p>When you gather tweets from twitter you can save the result as a JSON file. I saved the JSON files in a separate folder with each file being named after the politician. However this was approach was not very good. There are special characters in some of the file names and I had trouble reading the files. Not only that but this approach is not portable since other operating systems have different file name requirements. I got it to work but in the future I think I would have either one big JSON file, or index each politician in both the excel file and the file name.</p>
-					<h4>Getting the Personality Scores</h4>
-					<p>To get the personality percentile scores I used <a href="https://www.ibm.com/watson/developercloud/personality-insights.html" title="Dev page for Watson Personality Insights">IBM Watson's Personality Insights API (PI)</a>. I sent the API the concatenated tweet and it returns a personality scores for that concatenated tweet. You could use any piece of text. It might be fun to get the personality scores for movie characters. The scores include big 5 values, facets, needs, and values. Having these scores I was finally able to analyze the tweets.</p>
-					<h4>Analyzing the Personality Scores</h4>
-					<p>From the start it was decided that we would cluster that data. For this I used R, a vector language used by data scientists. I used the k-means algorithm built in to the base package of R to cluster the data.</p>
-					<p>After this I analyzed the data by making box plots using Excel. <strong>This should've been done before clustering</strong> You should have a look at the data before clustering to see attributes that have large variances.</p>
-				</section>
-				<section class="project" id="diet-plan">
-					<h3>Diet Planner</h3>
-                    <p>This project I worked on with a friend for our Database class. We had to develop a database application. We agreed to make a diet planner application with a GUI frontend.</p>
-                    <p>We used MySQL with XAMPP for the database. For the frontend we used a GUI framework for Java, JavaFX. I mostly worked on the database and some parts of the GUI.</p>
-                    <p>There was an interesting problem we came to. We wanted to have a table for each main food category since certain foods have different values. For example only a meat could be labeled as seafood
-                    So we wanted the Food table to reference only one of five tables. This was our first database project and we did not realize that such a schema was not possible. We got around this by having a compound key of the food id and the food type.
-                    </p>
-                    <p>The GUI was done using code instead of a drag and drop interface. It was a little painful but we managed to get it done. The primary reference videos we were using did not cover GUI development FXML, which is similar to Microsoft's XAML, since they both attempt to separate program logic from the interface.</p>
-					<a href="https://github.com/smael123/diet-planner" alt="Link to project on GitHub" class="project-link" target="_blank">Diet Planner on GitHub</a>
-				</section>
-                <section class="project" id="tictac">
-                    <h3>5x5 Tic-Tac-Toe</h3>
-                    <p>
-                        This project was done in a group of 4 and was meant to teach us about Software Engineering and the Waterfall model. I was the team leader and worked on the specification and requirement documents.
-						<p>On launch day it was a failure and crashed when the AI attempted to place their token on a taken spot. However I did learn much about software engineering including what documents must be produced to have a successful
-                        and maintainable project. Software Engineering was one of the most challenging classes I have ever taken. The documents we were asked to produce were very formal and filling them out for the first time was overbearing. However I do understand the importance of having a model and a series of steps to follow rather than just heading straight for the IDE.</p>
-                    </p>
-					<a href="https://github.com/perezc52/tictactoe" alt="Link to project on Github" class="project-link" target="_blank">5x5 Tic-Tac-Toe on GitHub</a>
-                </section>
-				<section class="project" id="safe-car">
-					<h3>Safe Car Application</h3>
-					<p>One summer I felt I needed to learn more about Web development. I sought out to learn how to use an API. I took a course on codeacademy.com
-					that showed me how to use the NHTSA API, particularly the <a href="https://one.nhtsa.gov/webapi/Default.aspx?SafetyRatings/API/5" alt="Link to NHTSA NCAP API" target="_blank">New Car Assessment Program API (NCAP).</a></p>
-					<p>First I followed their example and made a Python console application. Then I used what I learned to make a C# Windows Forms application.</p>
-					<a href="https://github.com/smael123/SafeCarConsole" class="project-link" target="_blank">Python console app on GitHub</a>
-					<a href="https://github.com/smael123/SafeCarApplication" class="project-link" target="_blank">C# Windows Forms app on GitHub</a>
-				<section>
-                <section class="project" id="garlic">
-                    <h3>Garlic</h3>
-                    <p>Garlic was a client server application done in a team of two for our Object Oriented Programming class. The goal of the project was to develop an application that emulated
-                    the services that the Scholarship and Accounting offices did. The program allowed the user to sign up for scholarships, financial aid, pay their tuition, testing, and parking.</p>
-                    <p>It was done using Java and the sockets class. I worked on the financial aid side of services and the connection and transfer of data between the client and server. An interesting problem
-                    I came across was how to share classes. There were initially two packages Client and Server. Each package had to transfer objects of classes that they both implemented.
-                    I am not sure why I thought I should make the exact same class files and put them in each package but it did not work since the server did not have access to the Client package's Scholarship object
-                    The solution was to have a package of shared classes. However doing this ruined the chances of having separate binaries for the client and server. The solution to that which was not implemented was to have a shared class library (that's the point of DLLs).</p>
-					<a href="https://github.com/smael123/Garlic" alt="Link to project on Github" class="project-link" target="_blank">Garlic on GitHub</a>
-                </section>
-			</article>
+		<main role="main" id="projects-section">
+			<nav class='page-nav content-wrap'>
+				<h2>My Projects</h2>
+				<ul>
+					<li><a href="#roblox" title="Read about Roblox Clothing Maker">Roblox Clothing Maker</a></li>
+					<li><a href="#simCalc" title="Read about the calculator android app">Simple Calculator</a></li>
+					<li><a href="#pers-pol" title="Read about my senior project">Personality Patterns among US Politicians</a></li>
+					<li><a href="#diet-plan" title="Read about Diet Planner">Diet Planner</a></li>
+					<li><a href="#tictac" title="Read about the Tic-Tac-Toe game">5x5 Tic-Tac-Toe</a></li>
+					<li><a href="#safe-car" title="Read about the safe car application">Safe Car Application</a></li>
+					<li><a href="#garlic" title="Read about Garlic client-server app">Garlic</a></li>
+				</ul>
+			</nav>
+			<section class="project content-wrap" id="roblox">
+				<h3>Roblox Clothing Maker</h3>
+				<p>This application was designed to allow users to merge images onto a template for Roblox clothing (game skins). It is a desktop application done using WPF and C#.
+				This application was interesting because I felt I made some smart design choices and followed the Agile software model well by making a Requirements document, conceptual model, a 
+				sequence diagram, then a UML diagram before starting to implement the project. Also thanks to some information I learned in a OOP video on lynda, 
+				I realized that each class should have one responsibility whereas before, I sparingly made new classes.</p>
+				<a href="https://github.com/smael123/RobloxClothingMaker" title="Link to project on GitHub" class="project-link" target="_blank">Roblox Clothing Maker on GitHub</a>
+			</section>
+			<section class="project content-wrap" id="sim-calc">
+				<h3>Simple Calculator</h3>
+				<aside>Screenshot:</aside>
+				<p>Realizing that people use applications on more than just desktops, I wanted to make a calculator for Android devices. I used Android Studio for this project and it is a real pain to get the default emulator working on a computer with an AMD processor. I came across a third party emulator named Memu and used that since it supported AMD-V.</p>
+				<p>I used the Shunting Yard algorithm with this video as a guide: <a href="https://www.youtube.com/embed/QzVVjboyb0s">Shunting Yard Algorithm</a></p>
+				
+				<a href="https://github.com/smael123/SimpleCalculator" title="Link to project on GitHub" class="project-link" target="_blank">Simple Calculator on GitHub</a>
+			</section>
+			<section class="project content-wrap" id="pers-pol">
+				<h3>Personality Patterns among US Politicians</h3>
+				<p>This was my Senior Project. I wanted to find personality patterns among US politicians (hence the title) using Twitter data. I was to gather the tweets, get personality percentile scores for each politician based on their concatenated tweets.</p>
+				<h4>Gathering Tweets</h4>
+				<p>First I got an excel file with the names of all the people in the House of Representatives from <a href="http://clerk.house.gov/member_info/" title="Go to clerk.house.gov">their website</a></p>
+				<p>I used the <a href="https://github.com/bear/python-twitter" title="Link to python-twitter GitHub">python-twitter</a> API and the Python programming language. Using this API I first gathered the names of the people in the House of Representatives. It was from a twitter list by Twitter Government but a I write this the link I used is dead. I used the <a href="https://dev.twitter.com/rest/reference/get/lists/list" title="Go to Twitter Dev page for GET lists">GET lists/list</a> part of the API</p>
+				<p>Using openpyxl, I inserted the twitter handle (screen name) to the corresponding name based on whether or not the real name matched. It almost worked fully. Some had middle names in the government file that did not match the Twitter name. And some used suffixes like Jr. that were again not in the Twitter name. For those cases I manually entered the data.</p>
+				<p>When you gather tweets from twitter you can save the result as a JSON file. I saved the JSON files in a separate folder with each file being named after the politician. However this was approach was not very good. There are special characters in some of the file names and I had trouble reading the files. Not only that but this approach is not portable since other operating systems have different file name requirements. I got it to work but in the future I think I would have either one big JSON file, or index each politician in both the excel file and the file name.</p>
+				<h4>Getting the Personality Scores</h4>
+				<p>To get the personality percentile scores I used <a href="https://www.ibm.com/watson/developercloud/personality-insights.html" title="Dev page for Watson Personality Insights">IBM Watson's Personality Insights API (PI)</a>. I sent the API the concatenated tweet and it returns a personality scores for that concatenated tweet. You could use any piece of text. It might be fun to get the personality scores for movie characters. The scores include big 5 values, facets, needs, and values. Having these scores I was finally able to analyze the tweets.</p>
+				<h4>Analyzing the Personality Scores</h4>
+				<p>From the start it was decided that we would cluster that data. For this I used R, a vector language used by data scientists. I used the k-means algorithm built in to the base package of R to cluster the data.</p>
+				<p>After this I analyzed the data by making box plots using Excel. <strong>This should've been done before clustering</strong> You should have a look at the data before clustering to see attributes that have large variances.</p>
+			</section>
+			<section class="project content-wrap" id="diet-plan">
+				<h3>Diet Planner</h3>
+				<p>This project I worked on with a friend for our Database class. We had to develop a database application. We agreed to make a diet planner application with a GUI frontend.</p>
+				<p>We used MySQL with XAMPP for the database. For the frontend we used a GUI framework for Java, JavaFX. I mostly worked on the database and some parts of the GUI.</p>
+				<p>There was an interesting problem we came to. We wanted to have a table for each main food category since certain foods have different values. For example only a meat could be labeled as seafood
+				So we wanted the Food table to reference only one of five tables. This was our first database project and we did not realize that such a schema was not possible. We got around this by having a compound key of the food id and the food type.
+				</p>
+				<p>The GUI was done using code instead of a drag and drop interface. It was a little painful but we managed to get it done. The primary reference videos we were using did not cover GUI development FXML, which is similar to Microsoft's XAML, since they both attempt to separate program logic from the interface.</p>
+				<a href="https://github.com/smael123/diet-planner" alt="Link to project on GitHub" class="project-link" target="_blank">Diet Planner on GitHub</a>
+			</section>
+			<section class="project content-wrap" id="tictac">
+				<h3>5x5 Tic-Tac-Toe</h3>
+				<p>
+					This project was done in a group of 4 and was meant to teach us about Software Engineering and the Waterfall model. I was the team leader and worked on the specification and requirement documents.
+					<p>On launch day it was a failure and crashed when the AI attempted to place their token on a taken spot. However I did learn much about software engineering including what documents must be produced to have a successful
+					and maintainable project. Software Engineering was one of the most challenging classes I have ever taken. The documents we were asked to produce were very formal and filling them out for the first time was overbearing. However I do understand the importance of having a model and a series of steps to follow rather than just heading straight for the IDE.</p>
+				</p>
+				<a href="https://github.com/perezc52/tictactoe" alt="Link to project on Github" class="project-link" target="_blank">5x5 Tic-Tac-Toe on GitHub</a>
+			</section>
+			<section class="project content-wrap" id="safe-car">
+				<h3>Safe Car Application</h3>
+				<p>One summer I felt I needed to learn more about Web development. I sought out to learn how to use an API. I took a course on codeacademy.com
+				that showed me how to use the NHTSA API, particularly the <a href="https://one.nhtsa.gov/webapi/Default.aspx?SafetyRatings/API/5" alt="Link to NHTSA NCAP API" target="_blank">New Car Assessment Program API (NCAP).</a></p>
+				<p>First I followed their example and made a Python console application. Then I used what I learned to make a C# Windows Forms application.</p>
+				<a href="https://github.com/smael123/SafeCarConsole" class="project-link" target="_blank">Python console app on GitHub</a>
+				<a href="https://github.com/smael123/SafeCarApplication" class="project-link" target="_blank">C# Windows Forms app on GitHub</a>
+			</section>
+			<section class="project content-wrap" id="garlic">
+				<h3>Garlic</h3>
+				<p>Garlic was a client server application done in a team of two for our Object Oriented Programming class. The goal of the project was to develop an application that emulated
+				the services that the Scholarship and Accounting offices did. The program allowed the user to sign up for scholarships, financial aid, pay their tuition, testing, and parking.</p>
+				<p>It was done using Java and the sockets class. I worked on the financial aid side of services and the connection and transfer of data between the client and server. An interesting problem
+				I came across was how to share classes. There were initially two packages Client and Server. Each package had to transfer objects of classes that they both implemented.
+				I am not sure why I thought I should make the exact same class files and put them in each package but it did not work since the server did not have access to the Client package's Scholarship object
+				The solution was to have a package of shared classes. However doing this ruined the chances of having separate binaries for the client and server. The solution to that which was not implemented was to have a shared class library (that's the point of DLLs).</p>
+				<a href="https://github.com/smael123/Garlic" alt="Link to project on Github" class="project-link" target="_blank">Garlic on GitHub</a>
+			</section>
+			<footer>
+				<h2>Let's Keep in Touch!</h2>
+				<a href="mailto:ismael.alma@gmail.com" alt="My e-mail address">e-mail</a>
+				<a href="https://www.linkedin.com/in/ismael-almaguer-769164124" alt="My LinkedIn page" target="_blank">LinkedIn</a>
+				<a href="https://github.com/smael123" alt="My GitHub page" target="_blank">GitHub</a>
+			</footer>
 		</main>
-        <footer>
-            <div class="content-wrap">
-                <h2>Let's Keep in Touch!</h2>
-
-                <!-- Social media and contact links. Add or remove any networks. -->
-                <div class="contact-info">
-                    <a href="mailto:ismael.alma@gmail.com" alt="My e-mail address">e-mail</a>
-                    <a href="https://www.linkedin.com/in/ismael-almaguer-769164124" alt="My LinkedIn page" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/smael123" alt="My GitHub page" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </footer>
+        
 	</body>
 </html>
