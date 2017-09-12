@@ -1,4 +1,6 @@
 _site
 .sass-cache
 .jekyll-metadata
+shared-footer.html
+shared-header.html
 images/Thumbs.db

@@ -82,9 +82,9 @@ header {
 	color: #f2f2f2;
 }
 
-#summary h1 {
-    font-size: 2.2em
-}
+/* #summary h2 { */
+    /* font-size: 2em */
+/* } */
 
 #language-section {
     background-color: #028090;
@@ -100,7 +100,7 @@ header {
     background-color: #456990;
 }
 
-#projects-section {
+#project-section {
     background-color: #f45b69
 }
 
