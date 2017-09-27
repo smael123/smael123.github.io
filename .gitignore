@@ -4,3 +4,5 @@ _site
 shared-footer.html
 shared-header.html
 images/Thumbs.db
+js/jquery-3.2.1.js
+js/jquery.scrollTo.js
